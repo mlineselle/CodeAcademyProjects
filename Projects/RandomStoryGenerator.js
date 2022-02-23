@@ -4,3 +4,18 @@ const character = ["Jeremy", "John", "Zorbog", "Corban", "King Julian", "Jesus C
 const middleAction = ["ate a large cactus flower", "shot several small ants", "mowed the lawn of the president", "pet the most loving dog", "pooped out a gleaming crown jewel", "destroyed an evil alien lifeform"];
 const end = ["then died in a spectacularly brutal way.", "the end.", "suddenly swimming into the sea, never to be seen again.", "then ran into a wormhole and dissapeared.", "then decided to turn into the most evil man ever.", "becoming the most beautiful chicken ever."]
 
+function randomIndex(array) {
+    const length = array.length;
+    return Math.floor(Math.random() * length);
+};
+
+function storyGenerator(){
+    const beginningIndex = randomIndex(beginning);
+    const middleSettingIndex = randomIndex(middleSetting);
+    const characterIndex = randomIndex(character);
+    const middleActionIndex = randomIndex(middleAction);
+    const endIndex = randomIndex(end);
+    return beginning[beginningIndex] + " " + middleSetting[middleSettingIndex] + " " + character[characterIndex] + " " + middleAction[middleActionIndex] + " " + end[endIndex];
+}
+
+console.log(storyGenerator());
